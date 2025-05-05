@@ -89,6 +89,16 @@ Enable LTO in `Cargo.toml`:
 lto = true
 ```
 
+# Dynamic Linking
+
+![Minimum Rust: 1.0](https://img.shields.io/badge/Minimum%20Rust%20Version-1.0-brightgreen.svg)
+
+By default, the Rust compiler uses **static linking**, which includes all dependencies and crates directly within the final binary. While this makes the binary self-contained, it also significantly increases its size.
+
+Alternatively, you can enable **dynamic linking**, which links to shared libraries at runtime. This can **drastically reduce** the size of your binary.
+
+For more details, check out [this blog post](https://kivooeo.github.io/dynamic-linking-in-rustc/).
+
 # Reduce Parallel Code Generation Units to Increase Optimization
 
 [By default][cargo-profile], Cargo specifies 16 parallel codegen units for release builds.
